@@ -6,8 +6,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 from fake_useragent import UserAgent
 import subprocess
 import os
@@ -35,7 +33,7 @@ while True:
     options.add_argument("--incognito")
 
     # Open Chrome
-    browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()), chrome_options=options)
+    browser = webdriver.Chrome(chrome_options=options)
 
     # browser.set_window_position(2000, 0)
 
